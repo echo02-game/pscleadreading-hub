@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>普通話水平測試朗讀作品示範錄音（跟讀版）</title>
+    <style>
+        /* 字體設置：優先使用圓體 */
+        :root {
+            --main-font: "Yuanti SC", "YouYuan", "STYuanti", "Microsoft YaHei", sans-serif;
+            --primary-color: #4a90e2;
+            --bg-color: #f5f7fa;
+            --item-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: var(--main-font);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased; /* iOS字體平滑 */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 標題區域 */
+        header {
+            background-color: #fff;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* 列表容器 */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px 40px 15px;
+        }
+
+        /* 作品列表項 */
+        .work-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .work-item {
+            background: var(--item-bg);
+            margin-bottom: 12px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden; /* 確保圓角 */
+        }
+
+        /* 鼠標懸停效果（僅限電腦） */
+        @media (hover: hover) {
+            .work-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+        }
+
+        .work-link {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            width: 100%;
+            box-sizing: border-box;
+            /* 點擊時的高亮顏色去除 */
+            -webkit-tap-highlight-color: transparent; 
+        }
+
+        /* 點擊時的反饋效果 */
+        .work-link:active {
+            background-color: #f0f0f0;
+        }
+
+        .work-number {
+            font-size: 0.9rem;
+            color: #fff;
+            background-color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 15px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+            flex-shrink: 0; /* 防止數字被擠壓 */
+        }
+
+        .work-title {
+            font-size: 1.1rem;
+            flex-grow: 1;
+            font-weight: 500;
+        }
+
+        .arrow {
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+
+        /* 針對還沒有鏈接的項目的樣式 */
+        .disabled-link {
+            opacity: 0.6;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+        
+        .disabled-link .work-number {
+            background-color: #ccc;
+        }
+
+        /* 手機適配微調 */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.2rem; }
+            .container { padding-top: 10px; }
+            .work-link { padding: 15px; }
+            .work-title { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>普通話水平測試朗讀作品示範錄音<br>（跟讀版）</h1>
+    <div class="subtitle">網頁僅供 VTC 内部使用</div>
+    <div class="copyright">訓練局普通話培訓測試中心版權所有 © 2026</div>
+</header>
+
+<div class="container">
+    <ul class="work-list" id="works-container">
+        <!-- 列表將由 JavaScript 自動生成 -->
+    </ul>
+</div>
+
+<script>
+    // 作品數據庫
+    // 如果有新的鏈接，請將對應作品的 link: "#" 替換為 link: "https://..."
+    const works = [
+        { id: 1, title: "北京的春節", link: "https://echo02-game.github.io/pscleadreading01-02/" },
+        { id: 2, title: "春", link: "https://echo02-game.github.io/pscleadreading02-02/" },
+        { id: 3, title: "匆匆", link: "https://echo02-game.github.io/pscleadreading03-01/" },
+        { id: 4, title: "聰明在於學習，天才在於積累", link: "https://echo02-game.github.io/pscleadreading04-01/" },
+        { id: 5, title: "大匠無名", link: "#" },
+        { id: 6, title: "大自然的語言", link: "#" },
+        { id: 7, title: "當今“千里眼”", link: "#" },
+        { id: 8, title: "鼎湖山聽泉", link: "#" },
+        { id: 9, title: "讀書人是幸福人", link: "#" },
+        { id: 10, title: "繁星", link: "#" },
+        { id: 11, title: "觀潮", link: "#" },
+        { id: 12, title: "孩子和秋風", link: "#" },
+        { id: 13, title: "海濱仲夏夜", link: "#" },
+        { id: 14, title: "海洋與生命", link: "#" },
+        { id: 15, title: "華夏文明的發展與融合", link: "#" },
+        { id: 16, title: "記憶像鐵軌一樣長", link: "#" },
+        { id: 17, title: "將心比心", link: "#" },
+        { id: 18, title: "晉祠", link: "#" },
+        { id: 19, title: "敬畏自然", link: "#" },
+        { id: 20, title: "看戲", link: "#" },
+        { id: 21, title: "蓮花和櫻花", link: "#" },
+        { id: 22, title: "麻雀", link: "#" },
+        { id: 23, title: "莫高窟", link: "#" },
+        { id: 24, title: "“能吞能吐”的森林", link: "#" },
+        { id: 25, title: "清塘荷韻", link: "#" },
+        { id: 26, title: "驅遣我們的想象", link: "#" },
+        { id: 27, title: "人類的語言", link: "#" },
+        { id: 28, title: "人生如下棋", link: "#" },
+        { id: 29, title: "十渡遊趣", link: "#" },
+        { id: 30, title: "世界民居奇葩", link: "#" },
+        { id: 31, title: "蘇州園林", link: "#" },
+        { id: 32, title: "泰山極頂", link: "#" },
+        { id: 33, title: "天地九重", link: "#" },
+        { id: 34, title: "我的老師", link: "#" },
+        { id: 35, title: "我喜歡出發", link: "#" },
+        { id: 36, title: "鄉下人家", link: "#" },
+        { id: 37, title: "鳥的天堂", link: "#" },
+        { id: 38, title: "夜間飛行的秘密", link: "#" },
+        { id: 39, title: "一幅名揚中外的畫", link: "#" },
+        { id: 40, title: "一粒種子造福世界", link: "#" },
+        { id: 41, title: "頤和園", link: "#" },
+        { id: 42, title: "憶讀書", link: "#" },
+        { id: 43, title: "閱讀大地的徐霞客", link: "#" },
+        { id: 44, title: "紙的發明", link: "#" },
+        { id: 45, title: "中國的寶島——臺灣", link: "#" },
+        { id: 46, title: "中國的牛", link: "#" },
+        { id: 47, title: "中國石拱橋", link: "#" },
+        { id: 48, title: "“住”的夢", link: "#" },
+        { id: 49, title: "走下領獎臺，一切從零開始", link: "#" },
+        { id: 50, title: "最糟糕的發明", link: "#" }
+    ];
+
+    const container = document.getElementById('works-container');
+
+    works.forEach(work => {
+        const li = document.createElement('li');
+        li.className = 'work-item';
+
+        // 檢查是否有有效鏈接
+        const hasLink = work.link && work.link !== '#';
+        const href = hasLink ? work.link : 'javascript:void(0)';
+        
+        // 如果沒有鏈接，添加灰色樣式類
+        if (!hasLink) {
+            li.classList.add('disabled-link');
+        }
+
+        // 點擊事件處理（如果是空鏈接則彈窗提示）
+        const clickHandler = !hasLink ? 'onclick="alert(\'該作品頁面即將上線\')"' : '';
+        const targetAttr = hasLink ? 'target="_blank"' : ''; // 有鏈接時在新窗口打開，方便返回
+
+        li.innerHTML = `
+            <a href="${href}" class="work-link" ${clickHandler} ${targetAttr}>
+                <span class="work-number">${work.id}</span>
+                <span class="work-title">作品${work.id}號《${work.title}》</span>
+                <span class="arrow">›</span>
+            </a>
+        `;
+        container.appendChild(li);
+    });
+</script>
+
+</body>
+</html>
