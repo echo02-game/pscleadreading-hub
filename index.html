@@ -248,7 +248,31 @@
         container.appendChild(li);
     });
 </script>
+<!-- Start of hit counter -->
+<style>
+    #counter-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10px; /* 左下角感應範圍，滑鼠碰到這區就會顯示 */
+        z-index: 9999;
+    }
+    #counter-img {
+        width: 100px; /* ★ 在這裡調整大小！數值越小圖片越小（例如可改成 60px 或 100px） */
+        height: auto; /* 確保圖片等比例縮小不變形 */
+        opacity: 0; /* 預設完全透明（隱藏） */
+        transition: opacity 0.3s ease; /* 淡入淡出效果 */
+        pointer-events: none; /* 無網頁鏈接，不干擾點擊 */
+    }
+    #counter-container:hover #counter-img {
+        opacity: 1; /* 滑鼠移入感應區時顯示 */
+    }
+</style>
 
+<div id="counter-container">
+    <img id="counter-img" src="https://counter1.optistats.ovh/private/freecounterstat.php?c=xlh31eqskg149zjp4fw1zdgp9fwyrakz" border="0" title="web counter" alt="web counter">
+</div>
+<!-- End of hit counter -->
 </body>
 </html>
 
