@@ -140,6 +140,37 @@
             background-color: #ccc;
         }
 
+
+        /* 返回按鈕樣式 */
+        .back-home-btn {
+            position: absolute;
+            top: 16px;
+            left: 15px;
+            display: inline-block;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            background-color: #fff;
+            border: 1px solid #d6e4f5;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .back-home-btn:active {
+            background-color: #f0f6ff;
+        }
+
+        @media (max-width: 600px) {
+            .back-home-btn {
+                top: 12px;
+                left: 12px;
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
+
         /* 手機適配微調 */
         @media (max-width: 600px) {
             h1 { font-size: 1.2rem; }
@@ -152,6 +183,7 @@
 <body>
 
 <header>
+    <a href="YOUR_URL_HERE" class="back-home-btn">返回普通話自修室</a>
     <h1>普通話水平測試朗讀作品示範錄音<br>（跟讀版）</h1>
     <div class="subtitle">網頁僅供内部使用</div>
     <div class="copyright">普通話培訓測試中心版權所有 © 2026</div>
