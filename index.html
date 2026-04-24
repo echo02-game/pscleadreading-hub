@@ -162,21 +162,24 @@
             background-color: #f0f6ff;
         }
 
-        @media (max-width: 600px) {
-            .back-home-btn {
-                top: 12px;
-                left: 12px;
-                padding: 6px 10px;
-                font-size: 0.8rem;
-            }
-        }
+
 
         /* 手機適配微調 */
         @media (max-width: 600px) {
+            header { 
+                padding-top: 45px; /* 增加頂部空間，避免標題與按鈕重疊 */
+            }
             h1 { font-size: 1.2rem; }
             .container { padding-top: 10px; }
             .work-link { padding: 15px; }
             .work-title { font-size: 1rem; }
+
+            .back-home-btn {
+                top: 10px;
+                left: 10px;
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
